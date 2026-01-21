@@ -100,6 +100,6 @@ MSc Bioinformatics – University of Murcia
 
 ## License
 
-This project is released under the **MIT License**.
+This repository is provided for academic and research purposes. Please cite the original project report if used in your work.
 
 
