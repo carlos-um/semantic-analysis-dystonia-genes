@@ -74,5 +74,32 @@ These genes and their associated syndromes are modeled as interconnected semanti
 
 ---
 
-## Repository Structure
+## Project Report
+
+The full description of the study, including ontology schema, RDF triples, SPARQL queries, and biological interpretation, is available in:
+
+- **`report/Semantic_Analysis_Muscular_Dystonia.pdf`**
+
+---
+
+## Key Takeaways
+
+- Demonstrates the use of **Semantic Web technologies in biomedical research**.
+- Shows how structured knowledge graphs can integrate genomic and clinical data.
+- Highlights FAIR data principles and interoperability with public resources.
+- Serves as a practical example of **ontology-driven bioinformatics analysis**.
+
+---
+
+## Author
+
+**Carlos C. Ureña Mateo**  
+MSc Bioinformatics – University of Murcia
+
+---
+
+## License
+
+This project is released under the **MIT License**.
+
 
