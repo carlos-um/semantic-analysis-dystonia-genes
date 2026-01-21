@@ -74,14 +74,6 @@ These genes and their associated syndromes are modeled as interconnected semanti
 
 ---
 
-## Project Report
-
-The full description of the study, including ontology schema, RDF triples, SPARQL queries, and biological interpretation, is available in:
-
-- **`report/Semantic_Analysis_Muscular_Dystonia.pdf`**
-
----
-
 ## Key Takeaways
 
 - Demonstrates the use of **Semantic Web technologies in biomedical research**.
