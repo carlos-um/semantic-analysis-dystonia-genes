@@ -1,0 +1,176 @@
+############ PREFIXES ############
+
+@prefix dist_r: <https://um.es/data/dystonia/> .       # Instances
+@prefix dist_o: <https://dystonia_ontology.um.es/> .   # Ontology terms
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix ncbi: <https://www.ncbi.nlm.nih.gov/gene/> .
+@prefix uniprot: <https://www.uniprot.org/uniprot/> .
+@prefix omim: <https://omim.org/entry/> .
+@prefix mondo: <http://purl.obolibrary.org/obo/MONDO_> .
+@prefix doid: <http://purl.obolibrary.org/obo/DOID_> .
+@prefix ro: <http://purl.obolibrary.org/obo/RO_> .
+@prefix sio: <http://semanticscience.org/resource/> .
+
+############ CLASSES ############
+
+dist_o:Gene rdf:type owl:Class ;
+    rdfs:label "Gene" ;
+    owl:equivalentClass <http://purl.obolibrary.org/obo/SO_0000704> .
+
+dist_o:Syndrome rdf:type owl:Class ;
+    rdfs:label "Syndrome" ;
+    owl:equivalentClass <http://purl.obolibrary.org/obo/DOID_225> .
+
+############ PROPERTIES ############
+
+dist_o:hasAlteration rdf:type owl:DatatypeProperty ;
+    rdfs:label "has alteration" ;
+    rdfs:comment "Describes a genetic mutation or variation in the gene." ;
+    owl:equivalentProperty <http://semanticscience.org/resource/SIO_001114> .
+
+dist_o:isAssociatedWith rdf:type owl:ObjectProperty ;
+    rdfs:label "is associated with" ;
+    rdfs:comment "Relates a gene to a clinical syndrome or disease." ;
+    owl:equivalentProperty <http://semanticscience.org/resource/SIO_000628> .
+
+dist_o:locatedOnChromosome rdf:type owl:DatatypeProperty ;
+    rdfs:label "located on chromosome" ;
+    rdfs:comment "Specifies the chromosomal location of a gene." ;
+    rdfs:domain dist_o:Gene ;
+    rdfs:range xsd:string .
+
+ro:0002205 rdf:type owl:ObjectProperty ;
+    rdfs:label "encodes" ;
+    rdfs:comment "Relates a gene to the protein it encodes." .
+
+############ INSTANCES: GENES + SYNDROMES ############
+
+dist_r:TOR1A rdf:type dist_o:Gene ;
+    rdfs:label "TOR1A" ;
+    owl:sameAs ncbi:1861 ;
+    ro:0002205 uniprot:O14656 ;
+    dist_o:locatedOnChromosome "9q34.11"^^xsd:string ;
+    dist_o:hasAlteration "c.907_909delGAG (p.Glu303del)" ;
+    rdfs:seeAlso omim:128100 ;
+    dist_o:isAssociatedWith dist_r:DYT1 .
+
+uniprot:O14656 rdfs:label "Torsin-1A" .
+
+dist_r:DYT1 rdf:type dist_o:Syndrome ;
+    rdfs:label "DYT1 early-onset generalized dystonia" ;
+    owl:sameAs mondo:0007492 .
+
+
+dist_r:PANK2 rdf:type dist_o:Gene ;
+    rdfs:label "PANK2" ;
+    owl:sameAs ncbi:80025 ;
+    ro:0002205 uniprot:Q9BZ23 ;
+    dist_o:locatedOnChromosome "20p13"^^xsd:string ;
+    dist_o:hasAlteration "c.1133A>G (p.Asp378Gly)" ;
+    rdfs:seeAlso omim:234200 ;
+    dist_o:isAssociatedWith dist_r:PKAN .
+
+uniprot:Q9BZ23 rdfs:label "Pantothenate kinase 2" .
+
+dist_r:PKAN rdf:type dist_o:Syndrome ;
+    rdfs:label "Pantothenate kinase-associated neurodegeneration (PKAN)" ;
+    owl:sameAs mondo:0009319 .
+
+
+dist_r:ATP1A3 rdf:type dist_o:Gene ;
+    rdfs:label "ATP1A3" ;
+    owl:sameAs ncbi:478 ;
+    ro:0002205 uniprot:P13637 ;
+    dist_o:locatedOnChromosome "19q13.2"^^xsd:string ;
+    dist_o:hasAlteration "c.1871C>T (p.Thr624Met)" ;
+    rdfs:seeAlso omim:128235 ;
+    dist_o:isAssociatedWith dist_r:RapidDystonia .
+
+uniprot:P13637 rdfs:label "Sodium/potassium-transporting ATPase subunit alpha-3" .
+
+dist_r:RapidDystonia rdf:type dist_o:Syndrome ;
+    rdfs:label "Rapid-onset dystonia-parkinsonism" ;
+    owl:sameAs mondo:0007496 .
+
+
+dist_r:PRRT2 rdf:type dist_o:Gene ;
+    rdfs:label "PRRT2" ;
+    owl:sameAs ncbi:116512 ;
+    ro:0002205 uniprot:Q7Z6L0 ;
+    dist_o:locatedOnChromosome "16p11.2"^^xsd:string ;
+    dist_o:hasAlteration "c.859G>A (p.Ala287Thr)" ;
+    rdfs:seeAlso omim:128200 ;
+    dist_o:isAssociatedWith dist_r:PKD .
+
+uniprot:Q7Z6L0 rdfs:label "Proline-rich transmembrane protein 2" .
+
+dist_r:PKD rdf:type dist_o:Syndrome ;
+    rdfs:label "Paroxysmal kinesigenic dyskinesia (PKD)" ;
+    owl:sameAs mondo:0044202 .
+
+
+dist_r:GCH1 rdf:type dist_o:Gene ;
+    rdfs:label "GCH1" ;
+    owl:sameAs ncbi:2643 ;
+    ro:0002205 uniprot:P30793 ;
+    dist_o:locatedOnChromosome "14q22.2"^^xsd:string ;
+    dist_o:hasAlteration "c.317C>T (p.Thr106Ile)" ;
+    rdfs:seeAlso omim:128230 ;
+    dist_o:isAssociatedWith dist_r:DRD .
+
+uniprot:P30793 rdfs:label "GTP cyclohydrolase 1" .
+
+dist_r:DRD rdf:type dist_o:Syndrome ;
+    rdfs:label "Dopa-responsive dystonia" ;
+    owl:sameAs mondo:0016812 .
+
+
+dist_r:THAP1 rdf:type dist_o:Gene ;
+    rdfs:label "THAP1" ;
+    owl:sameAs ncbi:55145 ;
+    ro:0002205 uniprot:Q9NVV9 ;
+    dist_o:locatedOnChromosome "8p11.21"^^xsd:string ;
+    dist_o:hasAlteration "c.97T>G (p.Cys33Gly)" ;
+    rdfs:seeAlso omim:605909 ;
+    dist_o:isAssociatedWith dist_r:DYT6 .
+
+uniprot:Q9NVV9 rdfs:label "THAP domain-containing protein 1" .
+
+dist_r:DYT6 rdf:type dist_o:Syndrome ;
+    rdfs:label "Early-onset dystonia type 6 (DYT6)" ;
+    owl:sameAs mondo:0100016 .
+
+
+dist_r:SGCE rdf:type dist_o:Gene ;
+    rdfs:label "SGCE" ;
+    owl:sameAs ncbi:8910 ;
+    ro:0002205 uniprot:O43556 ;
+    dist_o:locatedOnChromosome "7q21.3"^^xsd:string ;
+    dist_o:hasAlteration "c.109+5G>C (splicing)" ;
+    rdfs:seeAlso omim:159900 ;
+    dist_o:isAssociatedWith dist_r:Myoclonus .
+
+uniprot:O43556 rdfs:label "Epsilon-sarcoglycan" .
+
+dist_r:Myoclonus rdf:type dist_o:Syndrome ;
+    rdfs:label "Myoclonus-dystonia" ;
+    owl:sameAs mondo:0000903 .
+
+
+dist_r:ANO3 rdf:type dist_o:Gene ;
+    rdfs:label "ANO3" ;
+    owl:sameAs ncbi:283570 ;
+    ro:0002205 uniprot:Q9BYT9 ;
+    dist_o:locatedOnChromosome "11p14.3-p14.2"^^xsd:string ;
+    dist_o:hasAlteration "c.1409G>A (p.Gly470Glu)" ;
+    rdfs:seeAlso omim:615034 ;
+    dist_o:isAssociatedWith dist_r:DYT24 .
+
+uniprot:Q9BYT9 rdfs:label "Anoctamin-3" .
+
+dist_r:DYT24 rdf:type dist_o:Syndrome ;
+    rdfs:label "Craniocervical dystonia (DYT24)" ;
+    owl:sameAs mondo:0011886 .
